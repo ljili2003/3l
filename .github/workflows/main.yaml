@@ -19,9 +19,6 @@ jobs:
               with:
                 python-version: '3.10'
 
-            - name: "安装依赖包"
-              run: pip install requests
-
             - name: "运行 葫芦侠"
               run: python3 huluxia.py
   
