@@ -1,8 +1,8 @@
-import json,requests,hashlib,re
+import json,requests,hashlib,re,os
 
-phone = get.('admin')
+phone = os.environ["admin"]
 # 账号
-password = get.('psw')
+password = os.environ["psw"]
 # 密码
 
 def user():
