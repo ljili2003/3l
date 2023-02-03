@@ -20,7 +20,8 @@ jobs:
                 python-version: '3.11'
 
             - name: "安装依赖包"
-              run: pip install -r ./requirements.txt
+              run: pip install --upgrade pip
+                   pip install -r ./requirements.txt
 
             - name: "运行 葫芦侠"
               run: python3 huluxia.py
