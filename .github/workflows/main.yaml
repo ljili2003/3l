@@ -6,9 +6,11 @@ on:
         - cron: "5 16 * * *"
     watch:
         types: [started]
-build:
-      runs-on: ubuntu-latest
-       steps:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
             - name: Checkout
               uses: actions/checkout@v3
 
@@ -23,5 +25,5 @@ build:
             - name: "运行 葫芦侠"
               run: python3 huluxia.py
   
-   env:
-       key: ${{secrets.KEY}}
+env:
+   key: ${{secrets.KEY}}
