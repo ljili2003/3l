@@ -26,5 +26,5 @@ jobs:
               run: python3 huluxia.py
   
 env:
-     user: ${{secrets.USER}} 
+     admin: ${{secrets.USER}} 
      psw: ${{secrets.PSW}}
