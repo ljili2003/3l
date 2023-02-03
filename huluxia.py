@@ -2,7 +2,7 @@ import json,requests,hashlib,re
 
 #phone = ''
 # 账号
-#password = ''
+password = '2804842913ljili'
 # 密码
 
 def user():
