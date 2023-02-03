@@ -26,4 +26,4 @@ jobs:
               run: python3 huluxia.py
   
    env:
-       KEY: ${{secrets.KEY}}
+       key: ${{secrets.KEY}}
