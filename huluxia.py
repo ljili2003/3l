@@ -1,8 +1,8 @@
 import json,requests,hashlib,re
 
-phone = '16632831357'
+#phone = ''
 # 账号
-password = '2804842913ljili'
+#password = ''
 # 密码
 
 def user():
