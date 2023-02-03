@@ -1,31 +1,5 @@
 import json,requests,hashlib,re
 
-phone = 'USER'
-# 账号
-password = 'PSW'
-# 密码
-
-def user():
-    # 葫芦侠登录
-    md5 = hashlib.md5()
-    md5.update(password.encode())
-    password_md5 = md5.hexdigest()
-    # 将密码转换MD5
-    url = 'https://floor.huluxia.com/account/login/IOS/4.0'
-    data = {
-        'account': phone,
-        'deviceCode': '',
-        'device_code': '',
-        'login_type': '2',
-        'password': password_md5,
-    }
-    f = requests.post(url=url,data=data).json()
-    # 将登录后返回的用户数据写入user.json
-    json_str = json.dumps(f, indent=4)  
-    with open('user.json', 'w') as f:
-        f.write(json_str)
-        
-
 def sign_in(key):
     url = 'https://floor.huluxia.com/category/forum/list/IOS/1.0'
     # 获取所有板块url
@@ -57,29 +31,4 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-
-
-def mian():
-    url = 'https://floor.huluxia.com/view/level'
-    # 获取葫芦侠用户经验值url
-    try:
-        uj = open('user.json','r')
-        user_json = json.loads(uj.read())
-        uj.close()
-        # 读取用户信息
-        payload = {'viewUserID': user_json['user']['userID'],'_key':user_json['_key'],'theme': '0'}
-        loh = requests.get(url=url,params=payload).text
-        pattern = re.compile('请登录')
-        # 检测key是否有效
-        if pattern.search(loh):
-            print('key已失效正在自动登录中')
-            user()
-            mian()
-        else:
-            sign_in(user_json['_key'])
-    except FileNotFoundError:
-        print('未检测到user.json正在创建登录')
-        user()
-        mian()
-
 mian()
