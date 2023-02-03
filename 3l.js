@@ -2,7 +2,7 @@ var request = require('request-promise');
 var md5 = require('md5-node');
 var loginOptions = {
     method: 'POST',
-    uri: 'http://floor.huluxia.com/account/login/ANDROID/4.0',
+    uri: 'http://floor.huluxia.com/account/login/ANDROID/4.1.8',
     form: {
         "account": process.env.USER,
         "login_type": 2,
