@@ -34,7 +34,7 @@ function signIn() {
                 categories.map((v, i, a) => {
                     request({
                         method: 'POST',
-                        uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.0',
+                        uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.1.8',
                         form: {
                             _key: token,
                             cat_id: v.categoryID
@@ -68,7 +68,7 @@ function signIn() {
                             allPromose.push(new Promise((resolve, reject) => {
                                 request({
                                     method: 'POST',
-                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.0',
+                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.1.8',
                                     form: {
                                         _key: token,
                                         cat_id: v.categoryID
