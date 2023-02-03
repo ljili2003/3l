@@ -9,10 +9,11 @@ var loginOptions = {
         "password": md5(process.env.PSW.toString()),
         "platform": "2",
         "gkey": "000000",
-        "app_version": "4.0.0.6.2", // 版本号可能会旧
-        "versioncode": "20141433",
+        "app_version": "4.2.1.6", // 版本号可能会旧
+        "versioncode": "366",
         "market_id": "floor_huluxia",
-        "device_code": "%5Bw%5D02%3A00%3A00%3A00%3A00%3A00-%5Bi%5D008796755300310",
+        "device_code": "[d]e697ae3c-286e-4baf-8996-b5f241d9efe2",
+        "phone_brand_type":"VO",
     },
     headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", // 设置为 x-www
@@ -68,7 +69,7 @@ function signIn() {
                             allPromose.push(new Promise((resolve, reject) => {
                                 request({
                                     method: 'POST',
-                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.0',
+                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.1.8',
                                     form: {
                                         _key: token,
                                         cat_id: v.categoryID
