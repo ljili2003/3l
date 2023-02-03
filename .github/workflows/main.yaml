@@ -21,8 +21,6 @@ jobs:
 
             - name: "安装依赖包"
               run: pip install requests
-                   pip install hashlib
-                   pip install re
 
             - name: "运行 葫芦侠"
               run: python3 huluxia.py
