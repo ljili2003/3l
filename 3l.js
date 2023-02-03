@@ -20,7 +20,7 @@ var loginOptions = {
     },
     json: true
 }
-var token = "60904488B4506E4DB68B8311D13D505F0AB5D13DB9BF6271BF88512480980A7728D63F86EF275C86E29525D05A75477DBD1B88FACD1536AF";
+var token = "";
 function signIn() {
     console.log(`=====================${Date()}======================`);
     request('http://floor.huluxia.com/user/status/ANDROID/2.1?_key=' + token).then(resStatus => {
