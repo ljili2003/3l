@@ -2,7 +2,7 @@ var request = require('request-promise');
 var md5 = require('md5-node');
 var loginOptions = {
     method: 'POST',
-    uri: 'http://floor.huluxia.com/account/login/ANDROID/4.1.8',
+    uri: 'http://floor.huluxia.com/account/login/ANDROID/4.0',
     form: {
         "account": process.env.USER,
         "login_type": 2,
@@ -34,7 +34,7 @@ function signIn() {
                 categories.map((v, i, a) => {
                     request({
                         method: 'POST',
-                        uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.1.8',
+                        uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.0',
                         form: {
                             _key: token,
                             cat_id: v.categoryID
@@ -68,7 +68,7 @@ function signIn() {
                             allPromose.push(new Promise((resolve, reject) => {
                                 request({
                                     method: 'POST',
-                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.1.8',
+                                    uri: 'http://floor.huluxia.com/user/signin/ANDROID/4.0',
                                     form: {
                                         _key: token,
                                         cat_id: v.categoryID
