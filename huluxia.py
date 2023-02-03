@@ -2,7 +2,8 @@ import json,requests,hashlib,re
 
 phone = ''
 # 账号
-password = ''
+password = 'USER'
+password = 'PSW'
 # 密码
 
 def user():
