@@ -1,0 +1,35 @@
+name:huluxia
+
+on:
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
+  schedule:
+    - cron: '0 14,22 * * *'
+    workflow_dispatch:
+  watch:
+    types: started
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+       steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: "初始化Python"
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.8'
+
+            - name: "安装依赖包"
+              run: pip install -r ./requirements.txt
+
+            - name: "运行 葫芦侠"
+              run: python3 huluxia.py
+  
+   env:
+       USER: ${{secrets.USER}} 
+       PSW: ${{secrets.PSW}}
+       S_KEY: ${{secrets.KEY}}
