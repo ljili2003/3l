@@ -1,4 +1,4 @@
-name: huluxia
+name: 葫芦侠签到
 
 on:
     workflow_dispatch:
@@ -26,5 +26,5 @@ jobs:
               run: python3 huluxia.py
   
 env:
-     phone: ${{secrets.USER}} 
-     
+     user: ${{secrets.USER}} 
+     psw: ${{secrets.PSW}}
