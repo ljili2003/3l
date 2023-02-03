@@ -1,15 +1,11 @@
 name: huluxia
 
 on:
-  # push:
-  #   branches: [ master ]
-  # pull_request:
-  #   branches: [ master ]
-  workflow_dispatch:
-  schedule:
-    - cron: '0 14,22 * * *'
-  watch:
-    types: started
+    workflow_dispatch:
+    schedule:
+        - cron: "5 16 * * *"
+    watch:
+        types: [started]
 
 jobs:
   build:
@@ -30,6 +26,4 @@ jobs:
               run: python3 huluxia.py
   
    env:
-       USER: ${{secrets.USER}} 
-       PSW: ${{secrets.PSW}}
-       S_KEY: ${{secrets.KEY}}
+       KEY: ${{secrets.KEY}}
