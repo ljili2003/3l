@@ -20,7 +20,7 @@ jobs:
                 python-version: '3.11'
 
             - name: "安装依赖包"
-              run: pip install --upgrade pip
+              run: 
                    pip install -r ./requirements.txt
 
             - name: "运行 葫芦侠"
