@@ -1,8 +1,7 @@
 import json,requests,hashlib,re
 
-phone = ''
+phone = 'USER'
 # 账号
-password = 'USER'
 password = 'PSW'
 # 密码
 
