@@ -1,8 +1,8 @@
 import json,requests,hashlib,re
 
-phone = admin
+phone = get.('admin')
 # 账号
-password = psw
+password = get.('psw')
 # 密码
 
 def user():
