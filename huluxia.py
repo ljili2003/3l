@@ -1,6 +1,6 @@
 import json,requests,hashlib,re
 
-#phone = 'os.environ['user']'
+phone = 'os.environ['user']'
 # 账号
 password = 'os.environ['psw']'
 # 密码
