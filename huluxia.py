@@ -3,7 +3,6 @@ import time
 import hmac
 import base64
 import urllib.parse
-sendNotify = sendNotify()
 
 TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_USER_ID = os.environ["TG_USER_ID"]
