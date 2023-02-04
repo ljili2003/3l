@@ -1,4 +1,9 @@
 import json,requests,hashlib,re,os
+import sys
+
+from sendNotify import *
+
+sendNotify = sendNotify()
 
 phone = os.environ["admin"]
 # 账号
