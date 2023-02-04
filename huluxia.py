@@ -89,8 +89,8 @@ mian()
 
 
 
-        TG_BOT_TOKEN = os.environ['TG_BOT_TOKEN']
-        TG_USER_ID = os.environ['TG_USER_ID']
+        TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
+        TG_USER_ID = os.environ["TG_USER_ID"]
 def tgBotNotify(self, text, desp):
         if sendNotify.TG_BOT_TOKEN != '' or sendNotify.TG_USER_ID != '':
 
