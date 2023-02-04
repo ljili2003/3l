@@ -4,7 +4,6 @@ phone = os.environ["admin"]
 # 账号
 password = os.environ["psw"]
 # 密码
-text=[]
 def user():
     # 葫芦侠登录
     md5 = hashlib.md5()
@@ -57,7 +56,6 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text.append('签到成功获得经验:',exp['experienceVal'])
 
 
 def mian():
@@ -80,7 +78,6 @@ def mian():
             sign_in(user_json['_key'])
     except FileNotFoundError:
         print('未检测到user.json正在创建登录')
-        text.append（'未检测到user.json正在创建登录')
         user()
         mian()
 
