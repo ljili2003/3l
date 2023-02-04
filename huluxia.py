@@ -65,7 +65,7 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text=text+exp['experienceVal']
+            text=text+'签到完成'
             print(text)
 
 
@@ -101,6 +101,6 @@ def tgBotNotify():
             global text
             url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
-            body = 'chat_id=' + TG_USER_ID + '&text=' + text+ '\n\n'  + '&disable_web_page_preview=true'
+            body = 'chat_id=' + TG_USER_ID + '&text=' + texturllib.parse.quote(text)+ '\n\n'  + '&disable_web_page_preview=true'
             
             
