@@ -87,6 +87,7 @@ def mian():
             mian()
         else:
             sign_in(user_json['_key'])
+            tgBotNotify()
     except FileNotFoundError:
         print('未检测到user.json正在创建登录')
         user()
