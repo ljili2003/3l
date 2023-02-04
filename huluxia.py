@@ -45,7 +45,7 @@ def sign_in(key):
     for i in categoryforum:
         print('=' * 20)
         print('板块:',i['title'])
-        text=text+'板块:',i['title']
+        text=text+i['title']
         f = requests.post(url=uri,data={'fum_id': i['id']}).json()
         # 获取所有板块下的内容
         for cat in f['categories']:
