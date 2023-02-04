@@ -44,6 +44,7 @@ def sign_in(key):
     for i in categoryforum:
         print('=' * 20)
         print('板块:',i['title'])
+        text + ='板块:',i['title']
         f = requests.post(url=uri,data={'fum_id': i['id']}).json()
         # 获取所有板块下的内容
         for cat in f['categories']:
@@ -62,6 +63,7 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
+            text + ="签到成功获得经验:",exp['experienceVal'
 
 
 def mian():
@@ -91,26 +93,10 @@ mian()
 
 
 
-def tgBotNotify(self, text, desp):
-        if sendNotify.TG_BOT_TOKEN != '' or sendNotify.TG_USER_ID != '':
-
-            url = 'https://api.telegram.org/bot' + sendNotify.TG_BOT_TOKEN + '/sendMessage'
+def tgBotNotify(text):
+            url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
-            body = 'chat_id=' + sendNotify.TG_USER_ID + '&text=' + urllib.parse.quote(
-                text) + '\n\n' + urllib.parse.quote(desp) + '&disable_web_page_preview=true'
-            response = json.dumps(requests.post(url, data=body, headers=headers).json(), ensure_ascii=False)
-
-            data = json.loads(response)
-            if data['ok']:
-                print('\nTelegram发送通知消息完成\n')
-            elif data['error_code'] == 400:
-                print('\n请主动给bot发送一条消息并检查接收用户ID是否正确。\n')
-            elif data['error_code'] == 401:
-                print('\nTelegram bot token 填写错误。\n')
-            else:
-                print('\nTelegram bot发送通知调用API失败！！\n')
-                print(data)
-        else:
-            print('\n您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n')
-            pass
+            body = 'chat_id=' + TG_USER_ID + '&text=' + urllib.parse.quote(
+                text) + '\n\n'  + '&disable_web_page_preview=true'
+            
             
