@@ -4,6 +4,9 @@ import hmac
 import base64
 import urllib.parse
 sendNotify = sendNotify()
+
+TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
+TG_USER_ID = os.environ["TG_USER_ID"]
 phone = os.environ["admin"]
 # 账号
 password = os.environ["psw"]
@@ -88,8 +91,7 @@ def mian():
 mian()
 
 
-TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
-TG_USER_ID = os.environ["TG_USER_ID"]
+
 def tgBotNotify(self, text, desp):
         if sendNotify.TG_BOT_TOKEN != '' or sendNotify.TG_USER_ID != '':
 
