@@ -50,6 +50,7 @@ def sign_in(key):
         # 获取所有板块下的内容
         for cat in f['categories']:
             print(cat['title'])
+            text=text+cat['title']
             # print(cat['categoryID'])
             headers = {
                 'Host': 'floor.huluxia.com',
@@ -64,7 +65,8 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text=text+('签到成功获得经验:',exp['experienceVal'])
+            text=text+exp['experienceVal']
+            print(text)
 
 
 
