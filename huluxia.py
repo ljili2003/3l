@@ -3,7 +3,7 @@ import time
 import hmac
 import base64
 import urllib.parse
-text=''
+text=""
 TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_USER_ID = os.environ["TG_USER_ID"]
 phone = os.environ["admin"]
@@ -45,12 +45,12 @@ def sign_in(key):
     for i in categoryforum:
         print('=' * 20)
         print('板块:',i['title'])
-        text=text+i['title']
+        text=text+f"板块:{i['title']}\n"
         f = requests.post(url=uri,data={'fum_id': i['id']}).json()
         # 获取所有板块下的内容
         for cat in f['categories']:
             print(cat['title'])
-            text=text+cat['title']
+            text=text+f"{cat['title']}\n"
             # print(cat['categoryID'])
             headers = {
                 'Host': 'floor.huluxia.com',
@@ -65,7 +65,7 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text=text+'签到完成'
+            text=text+f"签到成功获得经验:{exp['experienceVal']}\n"
             print(text)
 
 
@@ -101,6 +101,6 @@ def tgBotNotify():
             global text
             url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
-            body = 'chat_id=' + TG_USER_ID + '&text=' + texturllib.parse.quote(text)+ '\n\n'  + '&disable_web_page_preview=true'
+            body = 'chat_id=' + TG_USER_ID + '&text=' + urllib.parse.quote(text)+ '\n\n'  + '&disable_web_page_preview=true'
             
             
