@@ -64,7 +64,8 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text=text+"签到成功获得经验:",f"exp['experienceVal']"+'\n'
+            a=(exp['experienceVal'],)
+            text=text+"签到成功获得经验:",a+'\n'
 
 
 
