@@ -3,7 +3,7 @@ import time
 import hmac
 import base64
 import urllib.parse
-
+text=''
 TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_USER_ID = os.environ["TG_USER_ID"]
 phone = os.environ["admin"]
@@ -93,7 +93,7 @@ mian()
 
 
 
-def tgBotNotify(text):
+def tgBotNotify():
             url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
             body = 'chat_id=' + TG_USER_ID + '&text=' + urllib.parse.quote(
