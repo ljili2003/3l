@@ -3,7 +3,7 @@ import time
 import hmac
 import base64
 import urllib.parse
-gobal text
+text=''
 TG_BOT_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_USER_ID = os.environ["TG_USER_ID"]
 phone = os.environ["admin"]
@@ -32,6 +32,7 @@ def user():
         
 
 def sign_in(key):
+    global text
     url = 'https://floor.huluxia.com/category/forum/list/IOS/1.0'
     # 获取所有板块url
     uri = 'https://floor.huluxia.com/category/forum/list/all/IOS/1.0'
@@ -94,9 +95,9 @@ mian()
 
 
 def tgBotNotify():
+            global text
             url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
-            body = 'chat_id=' + TG_USER_ID + '&text=' + urllib.parse.quote(
-                text) + '\n\n'  + '&disable_web_page_preview=true'
+            body = 'chat_id=' + TG_USER_ID + '&text=' + text+ '\n\n'  + '&disable_web_page_preview=true'
             
             
