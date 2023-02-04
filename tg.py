@@ -1,3 +1,17 @@
+import requests
+import time
+import hmac
+import hashlib
+import base64
+import json
+import os
+import urllib.parse
+
+# telegram
+    if os.environ.get('TG_BOT_TOKEN'):
+        TG_BOT_TOKEN = os.environ['TG_BOT_TOKEN']
+    if os.environ.get('TG_USER_ID'):
+        TG_USER_ID = os.environ['TG_USER_ID']
 def tgBotNotify(self, text, desp):
         if sendNotify.TG_BOT_TOKEN != '' or sendNotify.TG_USER_ID != '':
 
