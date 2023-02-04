@@ -66,7 +66,6 @@ def sign_in(key):
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
             text=text+f"签到成功获得经验:{exp['experienceVal']}\n"
-            print(text)
 
 
 
@@ -102,5 +101,15 @@ def tgBotNotify():
             url = 'https://api.telegram.org/bot' + TG_BOT_TOKEN + '/sendMessage'
             headers = {'Content-type': "application/x-www-form-urlencoded"}
             body = 'chat_id=' + TG_USER_ID + '&text=' + urllib.parse.quote(text)+ '\n\n'  + '&disable_web_page_preview=true'
-            
+            response = json.dumps(requests.post(url, data=body, headers=headers).json(), ensure_ascii=False)
+            data = json.loads(response)
+            if data['ok']:
+                print('\nTelegram发送通知消息完成\n')
+            elif data['error_code'] == 400:
+                print('\n请主动给bot发送一条消息并检查接收用户ID是否正确。\n')
+            elif data['error_code'] == 401:
+                print('\nTelegram bot token 填写错误。\n')
+            else:
+                print('\nTelegram bot发送通知调用API失败！！\n')
+                print(data)
             
