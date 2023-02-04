@@ -45,7 +45,7 @@ def sign_in(key):
     for i in categoryforum:
         print('=' * 20)
         print('板块:',i['title'])
-        text=text+'板块:',i['title']/n
+        text=text+'板块:',i['title']+'\n'
         f = requests.post(url=uri,data={'fum_id': i['id']}).json()
         # 获取所有板块下的内容
         for cat in f['categories']:
@@ -64,7 +64,8 @@ def sign_in(key):
             exp = requests.post(url=urk,data={'_key': key,'cat_id': cat['categoryID']},headers=headers).json()
             # 签到板块
             print('签到成功获得经验:',exp['experienceVal'])
-            text=text+"签到成功获得经验:",exp['experienceVal']/n
+            text=text+"签到成功获得经验:",exp['experienceVal']+'\n'
+
 
 
 def mian():
