@@ -6,7 +6,7 @@
 ## 使用教程
 
 1. 直接fork走.
-2. 再在`Settings`-`Secrets`里面添加`USER`,`PSW`
+2. 再在`Settings`-`Secrets`里面添加`USER`,`PSW`,'TG_BOT_TOKEN','TG_BOT_TOKEN'
 
 ##
 `USER`:邮箱账号，
