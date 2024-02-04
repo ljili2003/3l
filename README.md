@@ -1,5 +1,5 @@
 # 葫芦侠 3楼
-自己用来,不支持售后
+自己用来
 
 https://github.com/SVHAPI/huluxia
 
