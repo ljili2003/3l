@@ -23,7 +23,7 @@ jobs:
               run: pip install requests
      
             - name: "运行 葫芦侠"
-              run: python3 hlx2.py
+              run: python3 huluxia.py
   
 env:
      admin: ${{secrets.USER}} 
